@@ -1,6 +1,6 @@
-import ListCl from "./ListCl.js";
+import List from "./ListCl.js";
 
-class ProjectCl extends ListCl {
+class Project extends List {
   constructor(id, name, dateCreated) {
     super();
     this.id = id;
@@ -9,4 +9,4 @@ class ProjectCl extends ListCl {
   }
 }
 
-export default ProjectCl;
+export default Project;

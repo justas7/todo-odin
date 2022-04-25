@@ -1,30 +1,27 @@
-import ProjectCl from "./classes/ProjectCl";
-import ListCl from "./classes/ListCl";
+import Project from "./classes/ProjectCl";
+import List from "./classes/ListCl";
+import { appendNewProjcet } from "./ProjectsDisplay";
 
 const addBtn = document.getElementById("projectNameDoneBtn");
 const nameInput = document.getElementById("newProjectName");
 
-let name;
-let id = 0;
-const projects = new ListCl();
-
-/* create new project object and add it to the list */
-const getInput = function () {
-  name = nameInput.value;
-  id -= 1;
-};
-
-let project = new ProjectCl(id, name);
-
-const addProjectToList = function () {
-  projects.setNewItem(project);
-  console.log(projects);
-};
+const myProjects = new List();
 
 const createProjectHandler = function () {
-  addBtn.addEventListener("click", getInput);
+  let name = "a";
+  let id = 1;
+  let project;
 
-  addBtn.addEventListener("click", addProjectToList);
+  addBtn.addEventListener("click", function () {
+    name = nameInput.value;
+    project = new Project(id, name);
+    id++;
+  });
+
+  addBtn.addEventListener("click", function () {
+    myProjects.setNewItem(project);
+    appendNewProjcet(project.name);
+  });
 };
 
-export { projects, createProjectHandler };
+export { myProjects, createProjectHandler };

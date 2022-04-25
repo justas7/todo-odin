@@ -1,4 +1,4 @@
-class ListCl {
+class List {
   list = [];
 
   setNewItem(item) {
@@ -6,4 +6,4 @@ class ListCl {
   }
 }
 
-export default ListCl;
+export default List;

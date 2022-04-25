@@ -1,4 +1,4 @@
-class TaskCl {
+class Task {
   isCompleted = false;
 
   constructor(id, task, taskDate, dateCreated) {
@@ -13,4 +13,4 @@ class TaskCl {
   }
 }
 
-export default TaskCl;
+export default Task;

@@ -1,11 +1,15 @@
 import "./styles/normalize.css";
 import "./styles/styles.css";
 
-// import ProjectCl from "./modules/classes/ProjectCl.js";
-// import TaskCl from "./modules/classes/TaskCl.js";
+import Project from "./modules/classes/ProjectCl.js";
+// import Task from "./modules/classes/TaskCl.js";
 
-import { projects, createProjectHandler } from "./modules/ProjectCreate";
+import { myProjects, createProjectHandler } from "./modules/ProjectCreate";
 import { projectsDisplayHandler, displayProjects } from "./modules/ProjectsDisplay";
+
+const defaultProject = new Project(0, "Default");
+
+myProjects.setNewItem(defaultProject);
 
 createProjectHandler();
 projectsDisplayHandler();
