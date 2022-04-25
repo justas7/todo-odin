@@ -14,10 +14,17 @@ const toggleHiddenClass = function () {
 
 /* display all projects */
 const displayProjects = function () {
-  myProjects.list.forEach((project) => {
-    let li = document.createElement("li");
-    li.textContent = `${project.name}`;
-    list.appendChild(li);
+  const li = document.createElement("li");
+  li.textContent = `${myProjects.list[0].name}`;
+  list.appendChild(li);
+
+  let projects = JSON.parse(localStorage.getItem("myProjects"));
+  projects.list.forEach((project) => {
+    if (project.id !== myProjects.list[0].id) {
+      let li = document.createElement("li");
+      li.textContent = `${project.name}`;
+      list.appendChild(li);
+    }
   });
 };
 

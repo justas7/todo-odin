@@ -20,6 +20,7 @@ const createProjectHandler = function () {
 
   addBtn.addEventListener("click", function () {
     myProjects.setNewItem(project);
+    localStorage.setItem("myProjects", JSON.stringify(myProjects));
     appendNewProjcet(project.name);
   });
 };
