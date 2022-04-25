@@ -1,5 +1,5 @@
 class Project {
-  tasks = [];
+  #tasks = [];
 
   constructor(id, name, dateCreated) {
     this.id = id;
@@ -8,7 +8,11 @@ class Project {
   }
 
   addNewTask(task) {
-    this.tasks.push(task);
+    this.#tasks.push(task);
+  }
+
+  getTasks() {
+    return this.#tasks;
   }
 }
 

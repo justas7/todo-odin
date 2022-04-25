@@ -6,5 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ToDo</title>
   <script defer src="bundle.js"></script></head>
-  <body></body>
+  <body>
+    <header class="header"><h1>ToDo List</h1></header>
+    <nav class="nav">
+      <div class="newProject">
+        <button class="newProjectBtn">New Project</button>
+        <form class="newProjectName hidden">
+          <input placeholder="project name" id="name" type="text" />
+          <div>
+            <button id="projectNameDoneBtn" type="button">
+              <span class="material-symbols-outlined"> done </span>
+            </button>
+            <button id="projectNameCloseBtn" type="button">
+              <span class="material-symbols-outlined"> close </span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </nav>
+    <div class="content"></div>
+  </body>
 </html>

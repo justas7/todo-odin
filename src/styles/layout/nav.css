@@ -1,0 +1,73 @@
+button {
+  color: var(--color-two);
+  border: none;
+  background-color: inherit;
+}
+
+.nav {
+  grid-row: 2/3;
+  grid-column: 1/2;
+  padding: 10px;
+  color: var(--color-two);
+}
+
+/* new project add button and form */
+
+.newProjectBtn {
+  padding: 10px;
+  border: none;
+  background-color: inherit;
+  position: relative;
+  width: 130px;
+}
+
+.newProjectBtn:hover {
+  outline: 1px solid var(--color-two);
+  border-radius: 8px;
+}
+
+.newProjectBtn:active {
+  transform: translateY(1px);
+}
+
+.newProjectBtn::before {
+  content: "add";
+  font-family: "Material Icons";
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+.newProjectName button {
+  padding: 4px;
+  color: green;
+}
+.newProjectName button:last-child {
+  color: red;
+}
+
+.newProjectName button:active {
+  transform: translateY(1px);
+}
+
+.newProjectName {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.newProjectName > input {
+  padding: 3px;
+  max-width: 150px;
+  background-color: initial;
+  border: none;
+  border-bottom: 1px solid var(--color-two);
+  margin-bottom: 5px;
+}
+
+.newProjectName > input:focus {
+  outline: none;
+}
+
+.hidden {
+  display: none;
+}

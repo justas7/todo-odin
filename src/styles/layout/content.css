@@ -1,0 +1,7 @@
+.content {
+  grid-row: 2/3;
+  grid-column: 2/3;
+  border-left: 1px solid var(--color-one);
+  border-top: 1px solid var(--color-one);
+  box-shadow: 1px 1px 20px var(--color-one);
+}
