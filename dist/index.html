@@ -9,10 +9,20 @@
   <body>
     <header class="header"><h1>ToDo List</h1></header>
     <nav class="nav">
+      <div class="projects">
+        <h2>
+          My Projects
+          <hr />
+        </h2>
+        <ul class="projectsList">
+          <li>Default</li>
+          <li>Default2</li>
+        </ul>
+      </div>
       <div class="newProject">
         <button class="newProjectBtn">New Project</button>
-        <form class="newProjectName hidden">
-          <input placeholder="project name" id="name" type="text" />
+        <form class="newProjectName hidden slideIn">
+          <input placeholder="project name" id="newProjectName" type="text" />
           <div>
             <button id="projectNameDoneBtn" type="button">
               <span class="material-symbols-outlined"> done </span>

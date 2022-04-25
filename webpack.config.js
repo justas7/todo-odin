@@ -8,10 +8,11 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     clean: true,
   },
-  mode: "development",
+  mode: "production",
   devServer: {
     static: "./dist",
   },
+  devtool: "inline-source-map",
   module: {
     rules: [
       {
