@@ -1,4 +1,4 @@
-import { myProjects } from "./ProjectCreate";
+import { myProjects } from "./Projects";
 import DeleteIcon from "../icons/delete.svg";
 
 const closeBtn = document.getElementById("projectNameCloseBtn");
@@ -20,15 +20,14 @@ const clearInput = function () {
 /* appends new project */
 const appendProjcet = function (project) {
   const li = document.createElement("li");
-  const btn = document.createElement("button");
   const spn = document.createElement("span");
   const img = new Image();
+  img.setAttribute("data-id", `${project.id}`);
   img.src = DeleteIcon;
   spn.textContent = `${project.name}`;
-  btn.alt = "Delete";
-  btn.appendChild(img);
+  img.alt = "Delete";
   li.appendChild(spn);
-  li.appendChild(btn);
+  li.appendChild(img);
   list.appendChild(li);
 };
 
@@ -38,14 +37,15 @@ const displayProjects = function () {
     appendProjcet(project);
   });
 
-  list.firstChild.querySelector("button").remove();
+  list.firstChild.querySelector("img").remove();
 };
 
-const projectsDisplayHandler = function () {
+const newProjectFormDisplayHandler = function () {
   closeBtn.addEventListener("click", () => {
     toggleHiddenClass();
     clearInput();
     newProjectBtn.classList.add("slideIn");
+    console.log(document.getElementById("newProjectNameInput").value);
   });
 
   addBtn.addEventListener("click", () => {
@@ -59,4 +59,4 @@ const projectsDisplayHandler = function () {
   });
 };
 
-export { projectsDisplayHandler, displayProjects, appendProjcet };
+export { newProjectFormDisplayHandler, displayProjects, appendProjcet };

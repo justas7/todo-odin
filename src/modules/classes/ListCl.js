@@ -5,6 +5,10 @@ class List {
     this.#list.push(item);
   }
 
+  removeItem(item) {
+    this.#list = this.#list.filter((val) => val !== item);
+  }
+
   setList(list) {
     this.#list = list;
   }

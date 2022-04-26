@@ -4,9 +4,11 @@ import "./styles/styles.css";
 import Project from "./modules/classes/ProjectCl.js";
 // import Task from "./modules/classes/TaskCl.js";
 
-import { projectsDisplayHandler, displayProjects } from "./modules/ProjectsDisplay";
-import { myProjects, createProjectHandler } from "./modules/ProjectCreate";
+import { newProjectFormDisplayHandler, displayProjects } from "./modules/ProjectsDisplay";
+import { myProjects, createProjectHandler, deleteProjectHandler } from "./modules/Projects";
 
-createProjectHandler();
-projectsDisplayHandler();
 displayProjects();
+
+deleteProjectHandler();
+createProjectHandler();
+newProjectFormDisplayHandler();
