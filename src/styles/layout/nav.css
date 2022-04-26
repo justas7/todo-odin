@@ -107,13 +107,18 @@ button {
   margin: 10px 0;
   cursor: default;
   font-size: 1.2rem;
+  display: flex;
 }
 
-.projects > ul > li:hover {
+.projects > ul > li > span {
+  flex: 2;
+}
+
+.projects > ul > li > span:hover {
   outline: 1px solid var(--color-two);
   border-radius: 8px;
 }
 
-.projects > ul > li:active {
+.projects > ul > li > span:active {
   transform: translateY(1px);
 }

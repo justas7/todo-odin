@@ -12,26 +12,27 @@ const toggleHiddenClass = function () {
   newProjectBtn.classList.toggle("hidden");
 };
 
-/* display all projects */
-const displayProjects = function () {
-  const li = document.createElement("li");
-  li.textContent = `${myProjects.getList()[0].name}`;
-  list.appendChild(li);
-
-  myProjects.getList().forEach((project) => {
-    if (project.id !== myProjects.getList()[0].id) {
-      let li = document.createElement("li");
-      li.textContent = `${project.name}`;
-      list.appendChild(li);
-    }
-  });
+const clearInput = function () {
+  newProjectName.textContent = "";
 };
 
-/* appends new project after creating it in ProjectCreate.js */
-const appendNewProjcet = function (project) {
-  let li = document.createElement("li");
-  li.textContent = `${project}`;
+/* appends new project */
+const appendProjcet = function (project) {
+  const li = document.createElement("li");
+  const btn = document.createElement("button");
+  const spn = document.createElement("span");
+  spn.textContent = `${project.name}`;
+  btn.textContent = "Delete";
+  li.appendChild(spn);
+  li.appendChild(btn);
   list.appendChild(li);
+};
+
+/* displays all projects */
+const displayProjects = function () {
+  myProjects.getList().forEach((project) => {
+    appendProjcet(project);
+  });
 };
 
 const projectsDisplayHandler = function () {
@@ -50,4 +51,4 @@ const projectsDisplayHandler = function () {
   });
 };
 
-export { projectsDisplayHandler, displayProjects, appendNewProjcet };
+export { projectsDisplayHandler, displayProjects, appendProjcet };

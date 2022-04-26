@@ -1,16 +1,16 @@
 import Project from "./classes/ProjectCl";
 import List from "./classes/ListCl";
-import { appendNewProjcet } from "./ProjectsDisplay";
+import { appendProjcet } from "./ProjectsDisplay";
 
 const addBtn = document.getElementById("projectNameDoneBtn");
-const nameInput = document.getElementById("newProjectName");
+const nameInput = document.getElementById("newProjectNameInput");
 
 const myProjects = new List();
 
 let projectsList; /* list for  getting localstorage values */
 
 if (!localStorage.getItem("projectsList")) {
-  myProjects.setNewItem(new Project(0, "Default")); /* create starting project */
+  myProjects.setNewItem(new Project(0, "Default"));
   localStorage.setItem("projectsList", JSON.stringify(myProjects.getList()));
 }
 projectsList = JSON.parse(localStorage.getItem("projectsList"));
@@ -31,7 +31,9 @@ const createProjectHandler = function () {
     projectsList.push(project);
     localStorage.setItem("projectsList", JSON.stringify(projectsList));
     myProjects.setList(projectsList);
-    appendNewProjcet(project.name);
+    console.log(myProjects);
+
+    appendProjcet(project);
   });
 };
 
