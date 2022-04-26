@@ -7,6 +7,15 @@ const nameInput = document.getElementById("newProjectName");
 
 const myProjects = new List();
 
+let projectsList; /* list for  getting localstorage values */
+
+if (!localStorage.getItem("projectsList")) {
+  myProjects.setNewItem(new Project(0, "Default")); /* create starting project */
+  localStorage.setItem("projectsList", JSON.stringify(myProjects.getList()));
+}
+projectsList = JSON.parse(localStorage.getItem("projectsList"));
+myProjects.setList(projectsList);
+
 const createProjectHandler = function () {
   let name = "a";
   let id = 1;
@@ -19,8 +28,9 @@ const createProjectHandler = function () {
   });
 
   addBtn.addEventListener("click", function () {
-    myProjects.setNewItem(project);
-    localStorage.setItem("myProjects", JSON.stringify(myProjects));
+    projectsList.push(project);
+    localStorage.setItem("projectsList", JSON.stringify(projectsList));
+    myProjects.setList(projectsList);
     appendNewProjcet(project.name);
   });
 };

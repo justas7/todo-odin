@@ -1,8 +1,16 @@
 class List {
-  list = [];
+  #list = [];
 
   setNewItem(item) {
-    this.list.push(item);
+    this.#list.push(item);
+  }
+
+  setList(list) {
+    this.#list = list;
+  }
+
+  getList() {
+    return this.#list;
   }
 }
 

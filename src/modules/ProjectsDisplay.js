@@ -15,12 +15,11 @@ const toggleHiddenClass = function () {
 /* display all projects */
 const displayProjects = function () {
   const li = document.createElement("li");
-  li.textContent = `${myProjects.list[0].name}`;
+  li.textContent = `${myProjects.getList()[0].name}`;
   list.appendChild(li);
 
-  let projects = JSON.parse(localStorage.getItem("myProjects"));
-  projects.list.forEach((project) => {
-    if (project.id !== myProjects.list[0].id) {
+  myProjects.getList().forEach((project) => {
+    if (project.id !== myProjects.getList()[0].id) {
       let li = document.createElement("li");
       li.textContent = `${project.name}`;
       list.appendChild(li);
@@ -28,6 +27,7 @@ const displayProjects = function () {
   });
 };
 
+/* appends new project after creating it in ProjectCreate.js */
 const appendNewProjcet = function (project) {
   let li = document.createElement("li");
   li.textContent = `${project}`;
