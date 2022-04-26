@@ -5,7 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ToDo</title>
-    <link rel="stylesheet" href="./styles/normalize.css" />
   </head>
-  <body></body>
+  <body>
+    <header class="header"><h1>ToDo List</h1></header>
+    <nav class="nav">
+      <div class="projects">
+        <h2>
+          My Projects
+          <hr />
+        </h2>
+        <ul class="projectsList"></ul>
+      </div>
+      <div class="newProject">
+        <button class="newProjectBtn">New Project</button>
+        <form class="newProjectName hidden slideIn">
+          <input placeholder="project name" id="newProjectName" min="1" type="text" />
+          <div>
+            <button id="projectNameDoneBtn" type="button">
+              <span class="material-symbols-outlined"> done </span>
+            </button>
+            <button id="projectNameCloseBtn" type="button">
+              <span class="material-symbols-outlined"> close </span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </nav>
+    <div class="content"></div>
+  </body>
 </html>
