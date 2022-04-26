@@ -7,16 +7,19 @@ button {
 .nav {
   grid-row: 2/3;
   grid-column: 1/2;
-  padding: 10px;
+}
+
+.projects > h2 {
+  padding: 0 10px;
+  margin-bottom: 25px;
   color: var(--color-two);
-  display: flex;
-  flex-direction: column;
 }
 
 /* new project add button and new project form */
 
 .newProject {
   margin-top: 20px;
+  padding: 0 10px;
 }
 
 .newProjectBtn {
@@ -104,14 +107,20 @@ button {
 
 .projects > ul > li {
   padding: 10px 10px;
-  margin: 10px 0;
   cursor: default;
   font-size: 1.2rem;
   display: flex;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.projects > ul > li:nth-child(odd) {
+  background-color: var(--color-one);
 }
 
 .projects > ul > li > span {
   flex: 2;
+  overflow: hidden;
 }
 
 .projects > ul > li > span:hover {
