@@ -1,11 +1,11 @@
 class Task {
   isCompleted = false;
 
-  constructor(id, task, taskDate, dateCreated) {
+  constructor(id, task, importance, taskDate) {
     this.id = id;
     this.task = task;
+    this.importance = importance;
     this.taskDate = taskDate;
-    this.dateCreated = dateCreated;
   }
 
   taskCompleted() {

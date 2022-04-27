@@ -23,6 +23,7 @@ const appendProjcet = function (project) {
   const spn = document.createElement("span");
   const img = new Image();
   img.setAttribute("data-id", `${project.id}`);
+  spn.setAttribute("data-id", `${project.id}`);
   img.src = DeleteIcon;
   spn.textContent = `${project.name}`;
   img.alt = "Delete";

@@ -19,7 +19,7 @@ myProjects.setList(projectsList);
 
 const deleteProjectHandler = function () {
   list.addEventListener("click", function (e) {
-    if (e.target.getAttribute("data-id")) {
+    if (e.target.tagName === "IMG" && e.target.getAttribute("data-id")) {
       const id = Number(e.target.getAttribute("data-id"));
       myProjects.removeItem(myProjects.getList().find((project) => project.id == id));
       localStorage.setItem("projectsList", JSON.stringify(myProjects.getList()));

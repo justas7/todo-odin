@@ -4,4 +4,37 @@
   border-left: 1px solid var(--color-one);
   border-top: 1px solid var(--color-one);
   box-shadow: 1px 1px 20px var(--color-one);
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding: 20px;
+}
+
+.tasksTable {
+  text-align: left;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+.tasksTable th,
+td {
+  padding: 10px;
+}
+
+.tasksTable tr:nth-child(even) {
+  background-color: var(--color-one);
+}
+
+.tasksTable > thead > tr {
+  background-color: var(--color-two);
+  color: var(--color-one);
+}
+
+.newTask {
+  color: var(--color-one);
+  font-weight: 600;
+}
+
+.tasksTable tfoot {
+  background-color: var(--color-two);
 }
