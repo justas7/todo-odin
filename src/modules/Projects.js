@@ -29,6 +29,20 @@ const deleteProjectHandler = function () {
   });
 };
 
+const getActiveProject = function () {
+  let active = myProjects.getList()[0];
+
+  list.addEventListener("click", (e) => {
+    const id = Number(e.target.getAttribute("data-id"));
+
+    if (e.target.tagName === "SPAN") {
+      active = myProjects.getList().find((project) => project.id == id);
+    }
+  });
+
+  return active;
+};
+
 const createProjectHandler = function () {
   let project;
   const randomNumb = () => Math.floor(Math.random() * 10 + Date.now());
@@ -47,4 +61,4 @@ const createProjectHandler = function () {
   });
 };
 
-export { myProjects, createProjectHandler, deleteProjectHandler };
+export { myProjects, createProjectHandler, deleteProjectHandler, getActiveProject };
