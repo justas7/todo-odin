@@ -43,13 +43,53 @@ td {
 
 .taskForm {
   display: flex;
-  justify-content: center;
+  justify-content: start;
+  outline: 3px solid var(--color-two);
+  background-color: var(--color-one);
+  box-shadow: 1px 1px 20px var(--color-two);
+  padding: 20px;
+  width: 80%;
+}
+
+.taskForm input {
+  width: 50%;
 }
 
 .taskForm > ul {
   list-style: none;
+  width: 100%;
 }
 
-img[alt="add"] {
-  filter: saturate(18%);
+fieldset {
+  border: none;
+  padding: 0;
+}
+
+legend {
+  margin-bottom: 10px;
+}
+
+.taskForm fieldset > div {
+  display: flex;
+  width: 50%;
+  align-items: center;
+}
+
+.taskForm fieldset > div > input {
+  width: auto;
+  margin: 0 20px 0 5px;
+}
+
+.taskForm > ul > li {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+#addTaskBtn {
+  color: green;
+}
+
+#closeTaskFormBtn {
+  color: red;
 }

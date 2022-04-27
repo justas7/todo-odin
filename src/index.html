@@ -21,12 +21,9 @@
         <form class="newProjectName hidden slideIn">
           <input placeholder="project name" id="newProjectNameInput" min="1" type="text" />
           <div>
-            <button id="projectNameDoneBtn" type="button">
-              <span class="material-symbols-outlined"> done </span>
-            </button>
-            <button id="projectNameCloseBtn" type="button">
-              <span class="material-symbols-outlined"> close </span>
-            </button>
+            <span id="projectNameDoneBtn" class="material-symbols-outlined"> done </span>
+
+            <span id="projectNameCloseBtn" class="material-symbols-outlined"> close </span>
           </div>
         </form>
       </div>
@@ -72,29 +69,39 @@
             <td></td>
             <td></td>
           </tr>
+          <tr>
+            <td></td>
+            <td><input id="newTaskInput" type="text" /></td>
+            <td><input id="dueDateInput" type="date" /></td>
+            <td></td>
+          </tr>
         </tfoot>
       </table>
-      <form class="taskForm">
-        <ul>
-          <li><label for="newTaskInput">Task</label><input id="newTaskInput" type="text" /></li>
-          <li><label for="dueDateInput">Due</label><input id="dueDateInput" type="date" /></li>
-          <li>
-            <fieldset>
-              <legend>Imporatance</legend>
-              <div>
-                <label for="high">High</label
-                ><input name="importance" id="high" type="radio" />Medium<label for="medium"></label
-                ><input name="importance" id="medium" type="radio" />Low<label for="low"></label
-                ><input name="importance" id="low" type="radio" />
-              </div>
-            </fieldset>
-          </li>
-          <li>
-            <img src="<%= require('./icons/add.svg') %>" alt="add" />
-            <img src="<%= require('./icons/close.svg') %>" alt="close" />
-          </li>
-        </ul>
-      </form>
+      <!-- <form class="taskForm"> -->
+      <!-- <ul> -->
+      <!-- <li><label for="newTaskInput">Task</label><input id="newTaskInput" type="text" /></li> -->
+      <!-- <li><label for="dueDateInput">Due</label><input id="dueDateInput" type="date" /></li> -->
+      <!-- <li> -->
+      <!-- <fieldset> -->
+      <!-- <legend>Imporatance</legend> -->
+      <!-- <div> -->
+      <!-- <label for="high">High</label> -->
+      <!-- <input name="importance" id="high" type="radio" /> -->
+      <!-- <label for="medium">Medium</label> -->
+      <!-- <input name="importance" id="medium" type="radio" /> -->
+      <!-- <label for="low">Low</label> -->
+      <!-- <input name="importance" id="low" type="radio" /> -->
+      <!-- </div> -->
+      <!-- </fieldset> -->
+      <!-- </li> -->
+      <!-- <li> -->
+      <!-- <div> -->
+      <!-- <span id="addTaskBtn" class="material-symbols-outlined"> done </span> -->
+      <!-- <span id="closeTaskFormBtn" class="material-symbols-outlined"> close </span> -->
+      <!-- </div> -->
+      <!-- </li> -->
+      <!-- </ul> -->
+      <!-- </form> -->
     </div>
   </body>
 </html>
