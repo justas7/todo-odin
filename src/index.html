@@ -63,45 +63,32 @@
           </tr>
         </tbody>
         <tfoot>
-          <tr>
+          <tr id="newTask">
             <td></td>
-            <td><button class="newTask" type="button">+ New Task</button></td>
+            <td><button class="newTaskBtn" type="button">+ New Task</button></td>
             <td></td>
             <td></td>
           </tr>
-          <tr>
-            <td></td>
+          <tr id="newTaskForm" class="hidden">
+            <td>
+              <div>
+                <span id="closeTaskFormBtn" class="material-symbols-outlined"> close </span>
+                <span id="addTaskFormBtn" class="material-symbols-outlined"> done </span>
+              </div>
+            </td>
             <td><input id="newTaskInput" type="text" /></td>
             <td><input id="dueDateInput" type="date" /></td>
-            <td></td>
+            <td>
+              <label for="importance"></label>
+              <select name="importance" id="importance">
+                <option value="low">Low</option>
+                <option selected value="medium">Medium</option>
+                <option value="high">High</option>
+              </select>
+            </td>
           </tr>
         </tfoot>
       </table>
-      <!-- <form class="taskForm"> -->
-      <!-- <ul> -->
-      <!-- <li><label for="newTaskInput">Task</label><input id="newTaskInput" type="text" /></li> -->
-      <!-- <li><label for="dueDateInput">Due</label><input id="dueDateInput" type="date" /></li> -->
-      <!-- <li> -->
-      <!-- <fieldset> -->
-      <!-- <legend>Imporatance</legend> -->
-      <!-- <div> -->
-      <!-- <label for="high">High</label> -->
-      <!-- <input name="importance" id="high" type="radio" /> -->
-      <!-- <label for="medium">Medium</label> -->
-      <!-- <input name="importance" id="medium" type="radio" /> -->
-      <!-- <label for="low">Low</label> -->
-      <!-- <input name="importance" id="low" type="radio" /> -->
-      <!-- </div> -->
-      <!-- </fieldset> -->
-      <!-- </li> -->
-      <!-- <li> -->
-      <!-- <div> -->
-      <!-- <span id="addTaskBtn" class="material-symbols-outlined"> done </span> -->
-      <!-- <span id="closeTaskFormBtn" class="material-symbols-outlined"> close </span> -->
-      <!-- </div> -->
-      <!-- </li> -->
-      <!-- </ul> -->
-      <!-- </form> -->
     </div>
   </body>
 </html>

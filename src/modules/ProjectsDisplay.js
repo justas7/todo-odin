@@ -8,9 +8,9 @@ const newProjectName = document.querySelector(".newProjectName");
 const list = document.querySelector(".projectsList");
 
 /* hide and show input and buttons on new project button click */
-const toggleHiddenClass = function () {
-  newProjectName.classList.toggle("hidden");
-  newProjectBtn.classList.toggle("hidden");
+const toggleHiddenClass = function (elOne, elTwo) {
+  elOne.classList.toggle("hidden");
+  elTwo.classList.toggle("hidden");
 };
 
 const clearInput = function () {
@@ -43,21 +43,21 @@ const displayProjects = function () {
 
 const newProjectFormDisplayHandler = function () {
   closeBtn.addEventListener("click", () => {
-    toggleHiddenClass();
+    toggleHiddenClass(newProjectBtn, newProjectName);
     clearInput();
     newProjectBtn.classList.add("slideIn");
     console.log(document.getElementById("newProjectNameInput").value);
   });
 
   addBtn.addEventListener("click", () => {
-    toggleHiddenClass();
+    toggleHiddenClass(newProjectBtn, newProjectName);
     clearInput();
     newProjectBtn.classList.add("slideIn");
   });
 
   newProjectBtn.addEventListener("click", () => {
-    toggleHiddenClass();
+    toggleHiddenClass(newProjectBtn, newProjectName);
   });
 };
 
-export { newProjectFormDisplayHandler, displayProjects, appendProjcet };
+export { newProjectFormDisplayHandler, displayProjects, appendProjcet, toggleHiddenClass };
