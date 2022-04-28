@@ -1,16 +1,16 @@
 class Task {
-  isCompleted = false;
+	isCompleted = false;
 
-  constructor(id, task, importance, taskDate) {
-    this.id = id;
-    this.task = task;
-    this.importance = importance;
-    this.taskDate = taskDate;
-  }
+	constructor(id, task, dueDate, importance) {
+		this.id = id;
+		this.task = task;
+		this.dueDate = dueDate;
+		this.importance = importance;
+	}
 
-  taskCompleted() {
-    this.isCompleted = true;
-  }
+	taskCompleted() {
+		this.isCompleted = true;
+	}
 }
 
 export default Task;
