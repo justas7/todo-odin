@@ -1,29 +1,19 @@
-import "./styles/normalize.css";
-import "./styles/styles.css";
+import './styles/normalize.css';
+import './styles/styles.css';
+
+import { projectsRenderHandler, tasksRenderHandler } from './modules/Render';
 
 import {
-	newProjectFormDisplayHandler,
-	displayProjects,
-} from "./modules/ProjectsRender";
+  setActiveProject,
+  createProjectHandler,
+  deleteProjectHandler
+} from './modules/Projects';
 
-import {
-	setActiveProject,
-	createProjectHandler,
-	deleteProjectHandler,
-	activeProject,
-} from "./modules/Projects";
+import createTaskHandler from './modules/Tasks';
 
-import { newTaskFormDisplayHandler, displayTasks } from "./modules/TasksRender";
-import { createTaskHandler } from "./modules/Tasks";
-
-displayProjects();
+setActiveProject();
 deleteProjectHandler();
 createProjectHandler();
-setActiveProject();
-newProjectFormDisplayHandler();
 createTaskHandler();
-displayTasks();
-
-newTaskFormDisplayHandler();
-
-console.log(activeProject.getList());
+projectsRenderHandler();
+tasksRenderHandler();

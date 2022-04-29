@@ -1,125 +1,125 @@
 button {
-	color: var(--color-two);
-	border: none;
-	background-color: inherit;
+  color: var(--color-two);
+  border: none;
+  background-color: inherit;
 }
 
 .nav {
-	grid-row: 2/3;
-	grid-column: 1/2;
+  grid-row: 2/3;
+  grid-column: 1/2;
 }
 
 .projects > h2 {
-	padding: 0 10px;
-	margin-bottom: 25px;
-	color: var(--color-two);
+  padding: 0 10px;
+  margin-bottom: 25px;
+  color: var(--color-two);
 }
 
 /* new project add button and new project form */
 
 .newProject {
-	margin-top: 20px;
-	padding: 0 10px;
+  margin-top: 20px;
+  padding: 0 10px;
 }
 
 .newProjectBtn {
-	padding: 10px 0 10px 20px;
-	border: none;
-	background-color: inherit;
-	position: relative;
-	width: 100%;
-	text-align: left;
+  padding: 10px 0 10px 20px;
+  border: none;
+  background-color: inherit;
+  position: relative;
+  width: 100%;
+  text-align: left;
 }
 
 .newProjectBtn:hover {
-	outline: 1px solid var(--color-two);
-	border-radius: 8px;
+  outline: 1px solid var(--color-two);
+  border-radius: 8px;
 }
 
 .newProjectBtn:active {
-	transform: translateY(1px);
+  transform: translateY(1px);
 }
 
 .newProjectBtn::before {
-	content: "add";
-	font-family: "Material Icons";
-	position: absolute;
+  content: 'add';
+  font-family: 'Material Icons';
+  position: absolute;
 
-	top: 10px;
-	left: 5px;
+  top: 10px;
+  left: 5px;
 }
 
 .newProjectName button:active {
-	transform: translateY(1px);
+  transform: translateY(1px);
 }
 
 .newProjectName {
-	display: flex;
-	flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .newProjectName > input {
-	padding: 3px;
-	max-width: 150px;
-	background-color: initial;
-	border: none;
-	border-bottom: 1px solid var(--color-two);
-	margin-bottom: 5px;
+  padding: 3px;
+  max-width: 150px;
+  background-color: initial;
+  border: none;
+  border-bottom: 1px solid var(--color-two);
+  margin-bottom: 5px;
 }
 
 .newProjectName > input:focus {
-	outline: none;
+  outline: none;
 }
 
 .slideIn {
-	animation: moveInRight 0.5s;
+  animation: moveInRight 0.5s;
 }
 
 @keyframes moveInRight {
-	0% {
-		opacity: 0;
-		transform: translateX(-50px);
-	}
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
 
-	100% {
-		opacity: 1;
-		transform: translateX(0);
-	}
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* projects container */
 
 .projects > ul {
-	list-style: none;
-	padding: 10px 0;
+  list-style: none;
+  padding: 10px 0;
 }
 
-.projectsList > li {
-	padding: 10px 10px;
-	cursor: default;
-	font-size: 1.2rem;
-	display: flex;
-	gap: 10px;
-	font-weight: 600;
-	opacity: 0.5;
+#projectsList > li {
+  padding: 10px 10px;
+  cursor: default;
+  font-size: 1.2rem;
+  display: flex;
+  gap: 10px;
+  font-weight: 600;
+  opacity: 0.5;
 }
 
-.projectsList > li > span {
-	flex: 2;
-	overflow: hidden;
-	padding: 5px;
+#projectsList > li > span {
+  flex: 2;
+  overflow: hidden;
+  padding: 5px;
 }
 
-.projectsList > li > span:hover {
-	outline: 1px solid var(--color-two);
-	border-radius: 8px;
+#projectsList > li > span:hover {
+  outline: 1px solid var(--color-two);
+  border-radius: 8px;
 }
 
-.projectsList > li > span:active {
-	transform: translateY(1px);
+#projectsList > li > span:active {
+  transform: translateY(1px);
 }
 
-.projectsList > .active {
-	opacity: initial;
-	background-color: var(--color-one);
+#projectsList > .active {
+  opacity: initial;
+  background-color: var(--color-one);
 }

@@ -1,4 +1,4 @@
-import List from "./ListCl.js";
+import List from './ListCl';
 
 class Project extends List {
   constructor(id, name) {
