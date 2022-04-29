@@ -1,7 +1,7 @@
 import Project from "./classes/ProjectCl";
 import List from "./classes/ListCl";
-import { appendProject } from "./ProjectsDisplay";
-import { displayTasks } from "./TasksDisplay";
+import { appendProject } from "./ProjectsRender";
+import { displayTasks } from "./TasksRender";
 
 const addBtn = document.getElementById("projectNameDoneBtn");
 const nameInput = document.getElementById("newProjectNameInput");
@@ -9,6 +9,7 @@ const list = document.querySelector(".projectsList");
 const myProjects = new List(); /* has default project */
 const defaultProject = new Project(0, "My ToDo List");
 let activeProject = defaultProject;
+activeProject.setList(JSON.parse(localStorage.getItem(activeProject.id)));
 
 /* creates new default project if it doesnt exist and adds to local storage */
 if (!localStorage.getItem("projectsList")) {
@@ -30,9 +31,9 @@ const setActiveProject = function () {
 		if (e.target.tagName === "SPAN") {
 			[...list.children].forEach((list) => list.classList.remove("active"));
 			let project = myProjects.getList().find((project) => project.id == id);
-
 			activeProject = new Project(project.id, project.name);
-			console.log(displayTasks());
+			activeProject.setList(JSON.parse(localStorage.getItem(project.id)));
+			console.log(lsProjectsList);
 			displayTasks();
 			e.target.parentNode.classList.add("active");
 		}
@@ -50,13 +51,19 @@ const deleteProjectHandler = function () {
 
 			if (id === activeProject.id) {
 				activeProject = new Project(defaultProject.id, defaultProject.name);
+				activeProject.setList(
+					JSON.parse(localStorage.getItem(activeProject.id))
+				);
 				list.children[0].classList.add("active");
 			}
 			localStorage.setItem(
 				"projectsList",
 				JSON.stringify(myProjects.getList())
 			);
+			displayTasks();
+			/* removes project from projects list and its tasks from local storage */
 			e.target.parentElement.remove();
+			localStorage.removeItem(id);
 			lsProjectsList = lsProjectsList.filter((project) => project.id !== id);
 		}
 	});
@@ -72,7 +79,6 @@ const createProjectHandler = function () {
 		}
 
 		project = new Project(setId(), nameInput.value);
-
 		lsProjectsList.push(project);
 		localStorage.setItem("projectsList", JSON.stringify(lsProjectsList));
 		myProjects.setList(lsProjectsList);

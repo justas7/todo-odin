@@ -4,7 +4,7 @@ import "./styles/styles.css";
 import {
 	newProjectFormDisplayHandler,
 	displayProjects,
-} from "./modules/ProjectsDisplay";
+} from "./modules/ProjectsRender";
 
 import {
 	setActiveProject,
@@ -13,20 +13,17 @@ import {
 	activeProject,
 } from "./modules/Projects";
 
-import {
-	newTaskFormDisplayHandler,
-	displayTasks,
-} from "./modules/TasksDisplay";
+import { newTaskFormDisplayHandler, displayTasks } from "./modules/TasksRender";
 import { createTaskHandler } from "./modules/Tasks";
-
-console.log(activeProject);
 
 displayProjects();
 deleteProjectHandler();
 createProjectHandler();
-
-displayTasks();
-createTaskHandler();
-newProjectFormDisplayHandler();
-newTaskFormDisplayHandler();
 setActiveProject();
+newProjectFormDisplayHandler();
+createTaskHandler();
+displayTasks();
+
+newTaskFormDisplayHandler();
+
+console.log(activeProject.getList());

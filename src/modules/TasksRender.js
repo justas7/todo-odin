@@ -1,4 +1,4 @@
-import { toggleHiddenClass } from "./ProjectsDisplay"; /* from projectsDisplay.js */
+import { toggleHiddenClass } from "./ProjectsRender"; /* from projectsDisplay.js */
 import { activeProject } from "./Projects";
 
 const newTaskBtn = document.querySelector("button[class='newTaskBtn']");
@@ -8,6 +8,7 @@ const addTaskBtn = document.getElementById("addTaskBtn");
 const closeTaskFormBtn = document.getElementById("closeTaskFormBtn");
 const newTaskInput = document.getElementById("newTaskInput");
 const dueDate = document.getElementById("dueDateInput");
+const projectsList = document.querySelector(".projectsList");
 const tasksTableBody = document.querySelector("tbody");
 
 const appendTask = function (task) {
@@ -31,9 +32,14 @@ const appendTask = function (task) {
 };
 
 const displayTasks = function () {
-	activeProject.getList().forEach((task) => {
-		appendTask(task);
-	});
+	while (tasksTableBody.firstChild) {
+		tasksTableBody.removeChild(tasksTableBody.firstChild);
+	}
+	if (activeProject.getList()) {
+		activeProject.getList().forEach((task) => {
+			appendTask(task);
+		});
+	}
 };
 
 const newTaskFormDisplayHandler = function () {
@@ -53,6 +59,15 @@ const newTaskFormDisplayHandler = function () {
 		toggleHiddenClass(newTaskBtnRow, newTaskForm);
 		newTaskInput.value = "";
 		dueDate.value = "";
+	});
+
+	projectsList.addEventListener("click", (e) => {
+		if (e.target.tagName === "SPAN") {
+			newTaskBtnRow.classList.remove("hidden");
+			newTaskForm.classList.add("hidden");
+			newTaskInput.value = "";
+			dueDate.value = "";
+		}
 	});
 };
 

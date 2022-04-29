@@ -38,7 +38,6 @@ const displayProjects = function () {
 	myProjects.getList().forEach((project) => {
 		appendProject(project);
 	});
-
 	list.firstChild.querySelector("img").remove(); /* removes delete button */
 };
 
