@@ -59,8 +59,10 @@ const displayProjects = function displayProjects() {
 
 const appendTask = function appendTask(task) {
   const tr = document.createElement('tr');
+  tr.setAttribute('data-id', task.id);
   const checkbox = document.createElement('input');
   checkbox.setAttribute('type', 'checkbox');
+  checkbox.setAttribute('data-id', task.id);
   const td1 = document.createElement('td');
   td1.appendChild(checkbox);
   tr.appendChild(td1);
@@ -86,6 +88,12 @@ const displayTasks = function displayTasks() {
     JSON.parse(localStorage.getItem(id)).forEach((task) => {
       appendTask(task);
     });
+  }
+};
+
+const taskIsCompleted = function taskIsCompleted(e) {
+  if (e.target.tagName === 'INPUT' && e.target.type === 'checkbox') {
+    displayTasks();
   }
 };
 
@@ -160,6 +168,8 @@ const tasksRenderHandler = function tasksRenderHandler() {
     newTaskInput.value = '';
     dueDate.value = '';
   });
+
+  tasksTableBody.addEventListener('click', taskIsCompleted);
 };
 
 export { projectsRenderHandler, tasksRenderHandler, appendTask };

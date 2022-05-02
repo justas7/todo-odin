@@ -28,7 +28,6 @@ const setActiveProject = function setActiveProject() {
       const project = myProjects.getList().find((prj) => prj.id === id);
       activeProject = new Project(project.id, project.name);
       activeProject.setList(JSON.parse(localStorage.getItem(project.id)));
-      console.log(activeProject);
     }
   });
 };
